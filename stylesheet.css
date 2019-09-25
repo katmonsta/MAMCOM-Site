@@ -26,7 +26,7 @@ body{
     font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
     color: #173459;
 	background-color: #fff;
-
+	overflow-x: hidden;
 	}
   
 h1 {
@@ -44,14 +44,20 @@ h2 {
 	font-size: 36pt;
 	text-shadow: 1.5px 1.5px 1.5px #D6D6D6;
 	}
-
-p{
+h3  {
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	color: #0A72BA;
+	font-weight: 200 !important;
+	font-size: 30pt;
+	text-align: center;
+	}
+p 	{
 	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
 	color: #606060;
 	font-size: 11pt;
 	font-weight: lighter;
 	line-height: 16pt;
-}
+	}
 
 
 body {
@@ -173,7 +179,7 @@ body {
 
 
 .navbar {
-	z-index: 2;
+	z-index: 6;
 	background-color: #ffffff !important;
 	display: flex;
     align-items: center;
@@ -317,6 +323,7 @@ video {
 
 
 #whatWeDo{
+	position: static;
 	background-color: #fff;
 	padding: 50px 0px 50px 30px;
 	border: none;
@@ -370,10 +377,12 @@ video {
 	}
 
 
+
 /*--------------Our services---------------*/
 
 
 #ourServicesBG{
+	position: static;
 	background-color: #EDF7FC;
 	width: 100%;
 	bottom: 0;
@@ -416,6 +425,158 @@ video {
 	left: 0;
 }
 
+/*----------Our Work Content----------*/
+
+.heading{
+	margin-top: 30px;
+}
+
+.featuredCar{
+	z-index: 3;
+}
+.carouselSub{
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	font-size: 25px;
+	color: #fff;
+	text-align: left;
+	}
+.carouselHead{
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	font-size: 40px;
+	color: #fff;
+	text-shadow: none;
+	}
+.carousel-caption{
+	left: 0;
+	margin-left: 35px;
+	margin-bottom: 20px;
+}
+.carouselBtn img{
+	width: 10px;
+	}
+.carouselBtn{
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	font-size: 20px;
+	color: #fff;
+	font-weight: bold;
+	}
+.carouselBtn:hover,
+.carouselBtn:active{
+	font-size: 20px;
+	color: #D6D6D6;
+	font-weight: bold;
+	text-decoration: none;
+	}
+.projectImgHalf{
+	margin-top: 20px;
+	width: 100%;
+	}
+
+.card{
+	position: absolute;
+	bottom: 0;
+	margin: 2%;
+	background-color: transparent;
+	border: none;
+	}
+.card-title{
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	font-size: 25px;
+	color: #fff;
+	text-shadow: none;
+	font-weight: bold;
+	margin: 0px 0px 5px 0px;
+	}
+
+.vertlineProject{
+	border-left: 4px solid #fff;
+	float: left;
+	padding: 0px 0px 0px 15px;
+	margin: 5px 0px 5px 0px;
+	}
+.card-text{
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	font-size: 20px;
+	color: #fff;
+	text-shadow: none;
+	line-height: 30px;
+	}
+
+.hRule {
+	margin: 35px;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+	
+    }
+
+.hRule > span {
+    position: relative;
+    display: inline-block;
+    }
+	
+.hRule > span:before,
+.hRule > span:after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    width: 9999px;
+    height: 1px;
+    background: #A2B53A;
+    }
+
+.hRule > span:before {
+    right: 100%;
+    margin-right: 15px;
+    }
+
+.hRule > span:after {
+    left: 100%;
+    margin-left: 15px;
+    }
+.moreProjectCar{
+	padding: 0px 50px 50px 50px;
+	margin: auto;
+	left: 0;
+	right: 0;
+	}
+.moreProjectImg img{
+	margin: 10px;
+}
+
+.vertlineMPro{
+	position: absolute;
+	bottom: 0;
+	margin: 0px 0px 20px 20px;
+	border-left: 4px solid #fff;
+	padding: 0;
+}
+
+.mProTitle{
+	padding: 0px 0px 0px 10px;
+	color: #fff;
+	margin: 0;
+}
+.mProLink img{
+	width: 8px;
+}
+.mProLink{
+	color: #fff;
+	padding-left: 10px;
+	padding-top:  0;
+	margin: 0;
+}
+.mProCarPrevCtrl,
+.mProCarNextCtrl{
+	width:20px;
+	margin: 0px 30px;
+}
+
+.mProCarPrevCtrl img,
+.mProCarNextCtrl img{
+	width:20px;
+}
 
 /*----------Footer----------*/
 
