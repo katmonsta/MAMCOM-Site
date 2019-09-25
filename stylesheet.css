@@ -1,0 +1,442 @@
+/*	~~~~~~COLORS FOR SITE~~~~~
+Grey		#606060
+Light Grey	#EDEDED
+Medium Grey	#D6D6D6
+Navy Blue 	#173459
+Light Blue	#50ADE3
+Blue		#0A72BA
+Magenta		#BA1D84
+Green		#A2B53A
+Light B BG	#EDF7FC
+
+
+
+~~~~~~TVNord (Not working on web)~~~~~
+font-family: 'TVNordCondEF-Black', 'TVNordEF-RegularOblique', 'TVNordEF-Regular', 'TVNordEF-Light', 'TVNordEF-Heavy', 'TVNordEF-BoldOblique', 'TVNordEF-Bold', 'TVNordEF-Black', 'TVNordCondEF-RegularOblique', 'TVNordCondEF-Regular', 'TVNordCondEF-Light', 'TVNordCondEF-BoldOblique', 'TVNordCondEF-Bold', 'Helvetica', 'Arial', 'sans-serif';
+
+
+~~~~~~TEXT FOR SITE~~~~~
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">*/
+
+
+
+/* ~~~~~~Font Styles~~~~~~ */
+
+body{
+    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    color: #173459;
+	background-color: #fff;
+
+	}
+  
+h1 {
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	color: #50ADE3;
+	font-weight: bold;
+	font-size: 7vw;
+	opacity: 0.3;
+	}
+
+h2 {
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	color: #0A72BA;
+	font-weight: bold;
+	font-size: 36pt;
+	text-shadow: 1.5px 1.5px 1.5px #D6D6D6;
+	}
+
+p{
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	color: #606060;
+	font-size: 11pt;
+	font-weight: lighter;
+	line-height: 16pt;
+}
+
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+  background-color: #EDF7FC;
+}
+
+
+/*----------Navbar Style----------*/
+
+
+@media (min-width: 990px) {
+     .navbar {
+         height: 100px; 
+         display: flex;
+         align-items: center;
+     	}
+	  }
+@media (max-width: 990px) {
+    .navbar {
+         height: 100px; 
+         display: flex;
+    	}
+    .navbar-toggler {
+        border: none;
+		position:fixed;
+		right:0px !important;
+		display: flex;
+		z-index: 5;
+		background-color: #fff;
+		float: right;
+		top: 0;
+		margin-top: 30px;
+    	}
+	.navbar-collapse {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	.navbar-collapse.collapse.show {
+		height: 100vh;
+	}
+
+	
+	#logoText {
+		visibility: hidden;
+		}
+	
+	.navbar-nav{
+		background-color: #FFFFFF;
+		width: 35% !important;
+    	float: right !important;
+    	vertical-align: middle; 
+		height: 100vh !important;
+		right: 0 !important;
+		top: 100px;
+		opacity: 0.95;
+		margin-right: 0 !important;
+		text-align: right;
+		}
+	
+	.navbar-nav li{
+		padding: 10px 10px 10px 20px;
+		opacity:1;
+		margin: 15px 0px 0px 0px;
+		}
+	
+	.navbar-nav li a{
+		padding: 0px 30px 0px 30px;
+		opacity:1;
+		border-bottom: none;
+		}
+
+	.navbar-nav li a:hover {
+		border-bottom: none;
+		float: none;
+		}
+	
+	.navbar-nav li a:active {
+		border-bottom: none;
+		float: none;
+		}
+	.nav-link{
+		margin-right: 20px;
+	}
+	.nav-item:hover{
+		background-color: #EDEDED;
+	}
+
+
+	#menuDropdown{
+		margin-top: 100px;
+		width: 100%;
+	}
+	.dropdown-menu{
+		box-shadow: none !important;
+		font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+		font-size: 11pt;
+		background-color: transparent;
+	}
+	.dropdown-item{
+		text-align: right;
+	}
+	
+	.dropdown-menu a:hover{
+		color: #0A72BA;
+	}
+	.dropdown-menu a:active{
+		color: #0A72BA;
+	}
+	
+	
+} 
+
+
+.navbar {
+	z-index: 2;
+	background-color: #ffffff !important;
+	display: flex;
+    align-items: center;
+	box-shadow: 1px 1px 6px #606060;
+	}
+.navbar-toggler{
+	border: 0px;
+	position: fixed;
+	right:0px !important;
+	display: flex;
+	margin-right: 20px;
+	}
+.navbar-toggler:focus{
+	background-color: #fff;
+	box-shadow:none !important;
+    outline:0px !important;
+	border: none;
+}
+.navbar-toggler:active, 
+.navbar-toggler:hover{
+	border: none;
+	background-color:#EDEDED;
+	box-shadow:none !important;
+    outline:0px !important;
+}
+
+.nav-link {
+	margin-top: 5px;
+	color:#173459 !important;
+	line-height: 10px;
+	border-bottom: 2.5px solid #ffffff;
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	font-size: 10pt !important;
+	}
+
+.nav-link:hover {
+	border-bottom: 2.5px solid #A2B53A;
+	float: none;
+	}
+.nav-link:active {
+	border-bottom: 2.5px solid #173459;
+	float: none;
+	}
+
+.dropdown-menu{
+	border-radius: 0px;
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	box-shadow: 0px 0px 4px #606060;
+	border: none;
+	text-align: center;
+	}
+.dropdown-menu{
+	box-shadow: none !important;
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	font-size: 11pt;
+	}
+.dropdown-menu a{
+	color: #173459;
+	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+	border: none;
+	}
+
+.dropdown-menu a:hover{
+	background-color: #EDEDED;
+	}
+
+.dropdown-menu a:active{
+	background-color: #EDEDED;
+	}
+
+.nav-item {
+	padding-right: 20px;
+	}
+
+.btn {
+	background-color: #A2B53A;
+	color: white;
+	font-size: 12px;
+	border: none;
+	margin-right: 20px;
+	float:right;
+	}
+
+.btn:hover{
+	background-color: #50ADE3;
+	}
+.btn:active{
+	background-color: #50ADE3;
+	}
+
+.navbar-brand {
+	image-shadow:  1.5px 1.5px 1.5px #D6D6D6;
+	margin: 0px;
+	padding: 0;
+	}
+
+#logo{
+	padding: 15px 0px 0px 0px !important;
+	top: 0 !important;
+	margin: 0px 0px 0px 15px !important;
+	width: 70px;
+	position:fixed;
+	display: flex;
+	vertical-align: middle;
+	}
+
+#logoText{
+	padding: 15px 0px 0px 0px !important;
+	top: 0 !important;
+	margin: 0px 0px 0px 85px !important;
+	width: 86px;
+	position:fixed;
+	}
+	
+
+
+/*--------------PAGE CONTENT----------------*/    
+
+/*----------Home page Video Style----------*/
+
+
+.jumbotron {
+	position: static;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: inherit;
+	background-color: #fff;
+	}
+
+video {
+	position:static;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+ 	}
+
+
+
+/*--------------What we do---------------*/
+
+
+#whatWeDo{
+	background-color: #fff;
+	padding: 50px 0px 50px 30px;
+	border: none;
+	}
+#vertlineCopy{
+	border-left: 4px solid #A2B53A;
+	float: left;
+	padding: 0px 0px 0px 15px;
+	margin: 10px 40px 30px 0px;
+	}
+#whatWeDoImg{
+	float: right;
+	right: 0;
+	top: 0;
+	padding: 40px 0px 50px 20px;
+	}
+#textLink1{
+	font-size: 18px;
+	color: #0A72BA;
+	padding: 50px 20px 0px 0px;
+	font-weight: lighter;
+	margin-top: 40px;
+	word-break: keep-all;
+	}
+
+#textLink1 img{
+	width: 10px;
+	}
+
+#textLink1:hover{
+	color: #50ADE3;
+	text-decoration: none;
+	}
+
+#textLink2{
+	font-size: 18px;
+	color: #0A72BA;
+	padding: 50px 20px 0px 0px;
+	font-weight: lighter;
+	margin-top: 40px;
+	word-break: keep-all;
+	}
+
+#textLink2 img{
+	width: 10px;
+	}
+
+#textLink2:hover{
+	color: #50ADE3;
+	text-decoration: none;
+	}
+
+
+/*--------------Our services---------------*/
+
+
+#ourServicesBG{
+	background-color: #EDF7FC;
+	width: 100%;
+	bottom: 0;
+	padding: 50px 0px 50px 30px;
+}
+#ourServices{
+	background-color: transparent;
+	padding: 50px 0px 50px 0px;
+	border: none;
+	}
+#vertlineCopy2{
+	border-left: 4px solid #A2B53A;
+	float: left;
+	padding: 0px 0px 0px 15px;
+	margin: 10px 0px 30px 0px;
+	}
+
+#textLink3{
+	font-size: 18px;
+	color: #0A72BA;
+	padding: 50px 20px 0px 0px;
+	font-weight: lighter;
+	margin-top: 40px;
+	word-break: keep-all;
+	}
+
+#textLink3 img{
+	width: 10px;
+	}
+
+#textLink3:hover{
+	color: #50ADE3;
+	text-decoration: none;
+	}
+
+.ourServWidget{
+	position: absolute;
+	margin: auto;
+	right: 0;
+	left: 0;
+}
+
+
+/*----------Footer----------*/
+
+footer{
+	position: absolute;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px -1px 2px 2px #D6D6D6; 
+	width: 90%;
+	display: block;
+	}
+
+#footer{
+	background-color: #ffffff;
+	padding: 20px 0px 5px 0px;
+
+}
+
+#footer p{
+	font-size: 12px !important;
+	color: #173459;
+	text-align: center;
+}
