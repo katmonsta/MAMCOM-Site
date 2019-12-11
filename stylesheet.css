@@ -229,7 +229,6 @@ p{
 		padding-bottom: 10%;
 		font-size: 3vw !important;
 		left: 0 !important;
-		text-shadow: 1px 1px #606060;
 		}
 	.projName{
 		visibility: visible !important;
@@ -701,26 +700,7 @@ video {
 	text-decoration: none;
 	}
 
-.textLink2{
-	font-size: 18px;
-	color: #0A72BA;
-	padding: 20px 0px 0px 0px;
-	font-weight: lighter;
-	margin-top: 20px;
-	word-break: keep-all;
-	white-space: nowrap;
-	float:right;
-	}
 
-.textLink2 img{
-	width: 10px !important;
-	margin: 5px;
-	}
-
-.textLink2:hover{
-	color: #50ADE3;
-	text-decoration: none;
-	}
 
 
 
@@ -842,10 +822,10 @@ video {
 	font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
 	font-size: 30pt;
 	color: #fff;
+	text-shadow: none;
 	font-weight: bold;
 	margin: 0px 0px 0px 0px;
 	white-space: normal;
-	text-shadow: 1px 1px 1px #606060;
 	}
 
 .vertlineProject{
@@ -936,7 +916,6 @@ video {
 	border-left: 3px solid #fff;
 	padding: 0px 0px 0px 0px;
 	float: left;
-	text-shadow: 1px 1px 1px #606060;
 	}
 
 .mProTitle{
@@ -945,7 +924,6 @@ video {
 	margin: 0;
 	float: left;
 	font-weight: bold;
-	
 	}
 
 .mProLink img{
@@ -1277,8 +1255,8 @@ video {
     border-radius: 0 !important;
 	margin: 30px 20px;
 	padding: 0 !important;
-	min-width: 30rem;
-	max-width: 30rem;
+	min-width: 25rem;
+	max-width: 25rem;
 	float: none !important;
 	display:block;
 	}
@@ -1487,7 +1465,7 @@ video {
 	}
 
 .profileContact {
-	font-size: 1.2vw;
+/*	font-size: 1.2vw;*/
 	color: #fff;
 	text-align: left;
 	padding-left: 15px;
