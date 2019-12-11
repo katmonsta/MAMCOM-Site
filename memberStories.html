@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+	  
+<!-- disable youtube player related videos -->
+	  <style>
+		  .hytPlayerWrap{display: inline-block; position: relative;}
+		  .hytPlayerWrap.ended::after{content:""; position: absolute; top: 0; left: 0; bottom: 0; right: 0; cursor: pointer; background-color: black; background-repeat: no-repeat; background-position: center; background-size: 64px 64px; background-image: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCI+PHBhdGggZD0iTTI1NSAxMDJWMEwxMjcuNSAxMjcuNSAyNTUgMjU1VjE1M2M4NC4xNSAwIDE1MyA2OC44NSAxNTMgMTUzcy02OC44NSAxNTMtMTUzIDE1My0xNTMtNjguODUtMTUzLTE1M0g1MWMwIDExMi4yIDkxLjggMjA0IDIwNCAyMDRzMjA0LTkxLjggMjA0LTIwNC05MS44LTIwNC0yMDQtMjA0eiIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==);}
+		  .hytPlayerWrap.paused::after{content:""; position: absolute; top: 70px; left: 0; bottom: 50px; right: 0; cursor: pointer; background-color: black; background-repeat: no-repeat; background-position: center; background-size: 40px 40px; background-image: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSIxNzA2LjY2NyIgaGVpZ2h0PSIxNzA2LjY2NyIgdmlld0JveD0iMCAwIDEyODAgMTI4MCI+PHBhdGggZD0iTTE1Ny42MzUgMi45ODRMMTI2MC45NzkgNjQwIDE1Ny42MzUgMTI3Ny4wMTZ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+);}
+	  </style>
+	  
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>MAMCOM | Medicaid Marketing and Member Communications</title> 
+<!-- MAMCOM SEO -->	
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	  
+	<meta name="author" content="Katherine Stapleton & Stephen Suratos">
+	<meta name="description" content="MAMCOM | Medicaid Marketing and Member Communications">			
+	<meta name="keywords" content="Anthem, Medicaid, Marketing, Protfolio">  
+	  
+	
+	  
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="stylesheet.css" rel="stylesheet">  
+  </head>
+  
+<!-- onload event for wheel function -->	
+  <body onload="init();" style="margin:0px;">
+
+	  
+<!-- Nav Bar -->  
+	
+	<nav id="myNav" class="navbar sticky-top navbar-expand-lg py-0 navbar-light bg-light py-md-0 my-0 my-sm-0">
+		
+	    <a class="navbar-brand py-0" href="Index.html"><img id="logo" src="images/MAMCOM-Logo.svg"  alt="logo"></a>
+		<a class="navbar-brand py-0" href="Index.html"><img id="logoText" src="images/MAMCOM-Logo-text.svg"  alt="logo"></a>	
+
+	  <button id="navTog" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		<ul id="navBNav" class="navbar-nav ml-auto mt-2 mt-lg-0">
+		  <li id="menuDropdown" class="nav-item dropdown">
+        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          	OUR WORK
+        	</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				  <a class="dropdown-item" href="memberStories.html">Member Stories</a>
+				  <a class="dropdown-item" href="ourWork.html">Our Work</a>
+				</div>
+      	  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="whoWeAre.html">WHO WE&nbsp;ARE</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="partners.html">OUR&nbsp;PARTNERS</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="contact.html">CONTACT</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="resources.html">RESOURCES</a>
+		  </li>	
+			
+		  <li>
+			  <a href="https://share.antheminc.com/teams/BrandMktgComms/Lists/SeptDec2019_Job_Requests/NewForm.aspx?"><button class="btn btn-outline-success my-1 my-sm-0">WORK WITH US</button></a>
+		  </li>		
+
+		</ul>
+		
+		
+	  </div>
+	</nav>
+
+	  
+<!-- Featured Work -->   
+	<h1 class="heading">Member Stories</h1>
+	  
+<!-- Carousel -->
+	 
+	 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+
+		 
+	  <div id="featuredInner" class="carousel-inner">
+		<div class="carousel-item active">
+			<a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+				<img class="d-block w-100" src="projects/projectIMGS/Featured-MemberStories.jpg" alt="First slide">
+			</a>
+			  <div class="carousel-caption d-none d-md-block text-left">
+    			  <a class="ProLink" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+					  <h3 class="carouselSub"></h3>
+				  </a>
+  				</div>
+		</div>
+
+	  </div>
+	  </div>
+	
+	  
+<!-- Projects -->   		
+	<div id="project" class="card">
+	  <div class="row no-gutters">
+		  
+		<div class="col-md-6">  
+			<div class="card-body">	
+				<span><h3 class="card-title" style="text-align: left; font-size: 30px;">What we do every&nbsp;day</h3></span>
+				<div class="vertlineCopy">
+					<p class="card-text">  
+					Our videos tell the story of our mission and vision through the lens of our members whose lives have changed because of our innovative solutions and programs designed to address their specific needs. Think of our videos as white papers with a human element: living, breathing testaments to our wholeperson model of care, and the associates who live our vision every&nbsp;day. <br> <br>
+						
+					Tell us about the associates and programs that make us a valued, trusted health care partner. It could be your own story, or from someone on your team. We’d love to hear about it, and include you in the video. Talk about a stretch goal — get ready for your close-up!<br><br>
+						
+					Watch a few of our videos, and find more on our Amerigroup and Anthem video pages.	
+					</p>
+	
+				</div>
+					<div class="mStorylinks">
+						
+						<a href="https://share.antheminc.com/teams/BrandMktgComms/Lists/Real%20Stories%20Submission%20Form/NewForm.aspx?"><button class="btn btn-outline-success my-1 my-sm-0">SUBMIT&nbsp;A&nbsp;STORY</button></a>
+
+						<a  class="textLink" href="https://mss.anthem.com/medicaid/Pages/what-we-do-every-day.html">Anthem&nbsp;in&nbsp;Action&nbsp;<img src="images/arrow-rightMini.svg" alt="arrow icon" /> </a>
+
+						<a class="textLink" href="https://www.amerigroup.com/what-we-do-every-day.html">Real&nbsp;Stories&nbsp;<img src="images/arrow-rightMini.svg" alt="arrow icon"/></a>
+					</div>
+			</div>
+		</div>	  
+		<div class="projectImg col-md-6" data-toggle="modal" data-target="#exampleModalCenter">
+	  		<a href="#carouselExampleIndicatorsModal" data-target="#carouselExampleIndicatorsModal" data-slide-to="3">
+				<img src="projects/projectIMGS/MemberStories_OnePagers.jpg" alt="Anthem In Action and Real Stories One pages Print flyer" class="rounded-0">
+			</a>
+			<br><br>
+			<a  class="textLink2" href="https://share.antheminc.com/teams/BrandMktgComms/Real%20Stories%20Links%20Library/Forms/Brand.aspx">Real&nbsp;Stories&nbsp;Library<img src="images/arrow-rightMini.svg" alt="arrow icon"/> </a>
+
+		</div>
+	  </div>	 
+	</div>
+	  <!-- Project images --> 
+	  <div class="container projectImgs col-md-12">
+	  <div class="row workIMG" data-toggle="modal" data-target="#exampleModalCenter">
+          <div class="workImg-Div col-md-4">
+            <a href="#carouselExampleIndicatorsModal" data-target="#carouselExampleIndicatorsModal" data-slide-to="0">
+				<img class="workImg-card img-fluid" src="projects/projectIMGS/MemberStory1.jpg" alt="Member Story Elizabeth">
+			  
+			    <div class="card-body videoNameBody">
+					<p class="card-text videoName">Helping people with disabilities live independently</p>
+				</div>
+			 </a>
+          </div><!-- /.col-lg-3 -->
+		  <div class="workImg-Div col-md-4">
+            <a href="#carouselExampleIndicatorsModal" data-target="#carouselExampleIndicatorsModal" data-slide-to="1">
+				<img class="workImg-card img-fluid" src="projects/projectIMGS/MemberStory2.jpg" alt="Member Story Rachel">
+			  
+			    <div class="card-body videoNameBody">
+					<p class="card-text videoName">Finding solutions for the best care</p>
+				</div>
+			 </a>
+          </div><!-- /.col-lg-3 -->
+		  <div class="workImg-Div col-md-4">
+            <a href="#carouselExampleIndicatorsModal" data-target="#carouselExampleIndicatorsModal" data-slide-to="2">
+				<img class="workImg-card img-fluid" src="projects/projectIMGS/MemberStory3.jpg" alt="Member Story Robert">
+			  
+			    <div class="card-body videoNameBody">
+					<p class="card-text videoName">Someone to turn to</p>
+				</div>
+			 </a><!-- /.col-lg-3 -->
+	  		</div>
+	  </div>
+	  </div>
+	  
+<!-- Image Slide Show Modal --> 
+		<div id="exampleModalCenter" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+		  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+			  <div class="projectModalHeader modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Member Stories</h5>
+				<button type="button" class="close closeBTN" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+				
+			  <div class="modal-body">
+				
+				  <div id="carouselExampleIndicatorsModal" class="carousel slide" data-ride="carousel" data-interval="false">
+					  
+					  <ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicatorsModal" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicatorsModal" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicatorsModal" data-slide-to="2"></li>
+						<li data-target="#carouselExampleIndicatorsModal" data-slide-to="3"></li>
+					  </ol>
+					  
+					  <div class="carousel-inner hytPlayerWrapOuter hytPlayerWrap">
+						<div class="carousel-item active">
+							<div class="embed-responsive embed-responsive-16by9">	
+							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0ZIFwHGwcto?autoplay=1&modestbranding=1&rel=0&enablejsapi=1" allow="accelerometer; autoplay; encrypted-media; gyroscope;" frameborder="0"  allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="carousel-item hytPlayerWrapOuter">
+							<div class="embed-responsive embed-responsive-16by9 hytPlayerWrap">	
+							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FzAxeq0FHBY?autoplay=1&modestbranding=1&rel=0&enablejsapi=1" allow="accelerometer; autoplay; encrypted-media; gyroscope;" frameborder="0"  allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="carousel-item hytPlayerWrapOuter">
+							<div class="embed-responsive embed-responsive-16by9 hytPlayerWrap">	
+							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Jt5bsius0cU?autoplay=1&modestbranding=1&rel=0&enablejsapi=1" allow="accelerometer; autoplay; encrypted-media; gyroscope;" frameborder="0"  allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div>	
+							  <img src="projects/projectIMGS/MemberStories_OnePagers.jpg" alt="Anthem In Action and Real Stories One pages Print flyer" class="rounded-0">
+							</div>
+						</div>	  
+					  </div>
+					  
+					  <a class="ProjectPrevCtrl carousel-control-prev" href="#carouselExampleIndicatorsModal" role="button" data-slide="prev">
+						<img  src="images/carousel-arrow-prev.svg" alt="previous arrow icon">
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="ProjectNextCtrl carousel-control-next" href="#carouselExampleIndicatorsModal" role="button" data-slide="next">
+						<img  src="images/carousel-arrow-next.svg" alt="previous arrow icon">
+						<span class="sr-only">Next</span>
+					  </a>
+
+					</div>
+				  
+			  </div>
+	
+			</div>
+		  </div>
+		</div>
+	  	  
+	  
+<!-- Footer-->
+	<br>  
+	<footer id="footer" class="jumbotron jumbotron-fluid">
+	  <div class="container">
+		<p>Provided by MAMCOM | Medicaid Marketing and Member&nbsp;Communications</p>
+	  </div>
+	</footer>
+	  	  
+	  
+
+<!-- Optional JavaScript -->
+	<script src="scripts.js"></script> 
+	  
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	  
+ <!-- Disable related thumbnail on youtube player -->	  
+<script>"use strict"; document.addEventListener('DOMContentLoaded', function(){if (window.hideYTActivated) return; let onYouTubeIframeAPIReadyCallbacks=[]; for (let playerWrap of document.querySelectorAll(".hytPlayerWrap")){let playerFrame=playerWrap.querySelector("iframe"); let tag=document.createElement('script'); tag.src="https://www.youtube.com/iframe_api"; let firstScriptTag=document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); let onPlayerStateChange=function(event){if (event.data==YT.PlayerState.ENDED){playerWrap.classList.add("ended");}else if (event.data==YT.PlayerState.PAUSED){playerWrap.classList.add("paused");}else if (event.data==YT.PlayerState.PLAYING){playerWrap.classList.remove("ended"); playerWrap.classList.remove("paused");}}; let player; onYouTubeIframeAPIReadyCallbacks.push(function(){player=new YT.Player(playerFrame,{events:{'onStateChange': onPlayerStateChange}});}); playerWrap.addEventListener("click", function(){let playerState=player.getPlayerState(); if (playerState==YT.PlayerState.ENDED){player.seekTo(0);}else if (playerState==YT.PlayerState.PAUSED){player.playVideo();}});}window.onYouTubeIframeAPIReady=function(){for (let callback of onYouTubeIframeAPIReadyCallbacks){callback();}}; window.hideYTActivated=true;});</script>	  
+	  
+  </body>
+</html>

@@ -1,14 +1,71 @@
 <!doctype html>
 <html lang="en">
   <head>
-	
+
 <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  
+<!-- disable youtube player related videos -->
+	  <style>
+		  .hytPlayerWrap{display: inline-block; position: relative;}
+		  .hytPlayerWrap.ended::after{content:""; position: absolute; top: 0; left: 0; bottom: 0; right: 0; cursor: pointer; background-color: black; background-repeat: no-repeat; background-position: center; background-size: 64px 64px; background-image: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCI+PHBhdGggZD0iTTI1NSAxMDJWMEwxMjcuNSAxMjcuNSAyNTUgMjU1VjE1M2M4NC4xNSAwIDE1MyA2OC44NSAxNTMgMTUzcy02OC44NSAxNTMtMTUzIDE1My0xNTMtNjguODUtMTUzLTE1M0g1MWMwIDExMi4yIDkxLjggMjA0IDIwNCAyMDRzMjA0LTkxLjggMjA0LTIwNC05MS44LTIwNC0yMDQtMjA0eiIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==);}
+		  .hytPlayerWrap.paused::after{content:""; position: absolute; top: 70px; left: 0; bottom: 50px; right: 0; cursor: pointer; background-color: black; background-repeat: no-repeat; background-position: center; background-size: 40px 40px; background-image: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSIxNzA2LjY2NyIgaGVpZ2h0PSIxNzA2LjY2NyIgdmlld0JveD0iMCAwIDEyODAgMTI4MCI+PHBhdGggZD0iTTE1Ny42MzUgMi45ODRMMTI2MC45NzkgNjQwIDE1Ny42MzUgMTI3Ny4wMTZ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+);}
+	  </style>		  
 <!-- Code for Our services wheel -->
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="OurServiceWheel.js?1569338757612"></script>
+<script>
+function LoadGFonts(families, comp) {				
+	var lib=comp.getLibrary();				
+	var googleObject = {type: "Google", loadedFonts: 0, totalFonts: families.length, callOnLoad: lib.gfontAvailable};				
+	for(var i =0; i < families.length; i++)				
+		isFontAvailable(gFontsFamilies[i], googleObject);				
+}
+function isFontAvailable(font, obj) {				
+	var timeOut = 5000;				
+	var delay = 200;				
+	var interval = 0;				
+	var timeElapsed = 0;				
+	function checkFont() {				
+		var node = document.createElement("span");				
+		node.innerHTML = "giItT1WQy@!-/#";				
+		node.style.position      = "absolute";				
+		node.style.left          = "-1000px";				
+		node.style.top           = "-1000px";				
+		node.style.fontSize      = "300px";				
+		node.style.fontFamily    = "sans-serif";				
+		node.style.fontVariant   = "normal";				
+		node.style.fontStyle     = "normal";				
+		node.style.fontWeight    = "normal";				
+		node.style.letterSpacing = "0";				
+		document.body.appendChild(node);				
+		var width = node.offsetWidth;				
+		node.style.fontFamily = font+","+node.style.fontFamily;				
+		var returnVal = false;				
+		if((node && node.offsetWidth != width) || timeElapsed >=timeOut) {				
+			obj.loadedFonts++;				
+			if(interval)				
+				clearInterval(interval);				
+			obj.callOnLoad(font, obj.totalFonts);				
+			returnVal = true;				
+		}				
+		if(node) {				
+			node.parentNode.removeChild(node);				
+			node = null;				
+		}				
+		timeElapsed += delay;				
+		return returnVal;				
+	}				
+	if(!checkFont()) {				
+		interval = setInterval(checkFont, delay);				
+	}				
+}
+</script>
+<script>
+	var gFontsFamilies = ["Roboto"];
+</script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:regular&subset=latin">
+<script src="OurServiceWheel.js"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
@@ -17,6 +74,19 @@ function init() {
 	dom_overlay_container = document.getElementById("dom_overlay_container");
 	var comp=AdobeAn.getComposition("01224C88C6E443ABA5F6D52164FD3043");
 	var lib=comp.getLibrary();
+	try {
+		if(!(typeof gFontsFamilies === 'undefined' || gFontsFamilies === null))
+			LoadGFonts(gFontsFamilies, comp);		
+		if(!(typeof totalTypekitFonts === 'undefined' || totalTypekitFonts === null)) {			
+			var typekitObject = {type: 'Typekit', loadedFonts: 0, totalFonts: totalTypekitFonts, callOnLoad: lib.tfontAvailable};		
+			Typekit.load({
+			async: true,
+			'fontactive': function(family) {
+				isFontAvailable(family, typekitObject);
+				}
+			});
+		}
+	} catch(e) {};
 	handleComplete({},comp);
 }
 function handleComplete(evt,comp) {
@@ -30,32 +100,7 @@ function handleComplete(evt,comp) {
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
 		createjs.Ticker.setFPS(lib.properties.fps);
-		createjs.Ticker.addEventListener("tick", stage)
-		stage.addEventListener("tick", handleTick)
-		function handleTick(event) {
-			var cameraInstance = exportRoot.___camera___instance;
-			if(cameraInstance)
-			{
-				var stageCenter = { 'x' : lib.properties.width/2, 'y' : lib.properties.height/2 };
-				if(cameraInstance._off != null && cameraInstance._off == true)
-					exportRoot.transformMatrix = new createjs.Matrix2D();
-				else
-				{
-					if(cameraInstance.pinToObject !== undefined)
-					{
-						cameraInstance.x = cameraInstance.pinToObject.x + cameraInstance.pinToObject.pinOffsetX;
-						cameraInstance.y = cameraInstance.pinToObject.y + cameraInstance.pinToObject.pinOffsetY;
-					}
-					var mat = cameraInstance.getMatrix();
-					mat.tx -= stageCenter.x;
-					mat.ty -= stageCenter.y;
-					var inverseMat = mat.invert();
-					inverseMat.prependTransform(stageCenter.x, stageCenter.y, 1, 1, 0, 0, 0, 0, 0);
-					inverseMat.appendTransform(-stageCenter.x, -stageCenter.y, 1, 1, 0, 0, 0, 0, 0);
-					exportRoot.transformMatrix = inverseMat;
-				}
-			}
-		}
+		createjs.Ticker.addEventListener("tick", stage);
 	}	    
 	//Code to support hidpi screens and responsive scaling.
 	function makeResponsive(isResp, respDim, isScale, scaleType) {		
@@ -170,13 +215,48 @@ function handleComplete(evt,comp) {
 
 	  
 <!-- Home Page Video -->   
-	<div class="jumbotron jumbotron-fluid">
-		<video controls autoplay muted>
-		  <source src="video/MAMCOM-Sizzle-test.mp4" type="video/mp4">
-		  <!--  *** FPO FOR FINAL VIDEO IN OGG *** <source src="video/MAMCOM-Sizzle-test.mp4" type="video/ogg">-->
-			Your browser does not support the video tag.
-		</video>
-	</div>	
+	 <div class="jumbotron jumbotron-fluid">
+		<div data-toggle="modal" data-target="#exampleModalCenter">
+		  	<a href="#carouselExampleIndicatorsModal" data-target="#carouselExampleIndicatorsModal" data-slide-to="0">
+				<img class="d-block w-100" src="images/IndexHeader.jpg" alt="MAMCOM Sizzle Real Img">
+			</a>
+		</div>
+		<div class="arrow bounce indexArrow">
+  			<a href="#whatWeDo"><img class="a" src="images/arrow-downWHT.svg" alt="arrow icon"/></a>
+		</div>
+	  </div>
+	  
+	  <!-- Video Modal --> 
+		<div id="exampleModalCenter" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+		  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+			  <div class="projectModalHeader modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">MAMCOM 2018 Sizzle Reel</h5>
+				<button type="button" class="close closeBTN" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+				
+			  <div class="modal-body">
+				
+				  <div id="carouselExampleIndicatorsModal" class="carousel slide" data-ride="carousel" data-interval="false">
+					  <div class="carousel-inner">
+						 <div class="carousel-item active hytPlayerWrapOuter">
+						   	<div class="embed-responsive embed-responsive-16by9 hytPlayerWrap">	
+							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NrRhvXSq7Kk?autoplay=1&modestbranding=1&rel=0&enablejsapi=1" frameborder="0"  allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen ></iframe>
+							</div>
+						</div> 
+						
+					  </div>
+
+					</div>
+				  
+			  </div>
+	
+			</div>
+		  </div>
+		</div>
+	  
 	  
 <!-- What we do	-->
 	  
@@ -185,16 +265,14 @@ function handleComplete(evt,comp) {
 		  
 		<div class="col-md-6">  
 			<div class="card-body">	
-				<h2 class="card-title">What we do</h2>
+				<h2 class="card-title">About us</h2>
 				<div id="vertlineCopy">
 					<p class="card-text">  
-					Everyone is going to see things differently - and that’s the way it should be. Here’s something that’s fun. We can fix anything. I’m sort of a softy, I couldn’t shoot Bambi except with a camera. By now you should be quite happy about what’s happening here. If you overwork it you become a cloud killer. There’s nothing worse than a cloud killer. Now we’ll take the almighty fan brush. Now it’s beginning to make a little sense.<br/><br/>
-
-					And that’s when it becomes fun - you don’t have to spend your time thinking about what’s happening - you just let it happen. God gave you this gift of imagination. Use it. 
+					Medicaid Marketing and Member Communications (MAMCOM) creates effective, innovative and compliant communications for all points of the member life cycle – from joining to getting benefits to staying&nbsp;enrolled. 
 					</p>
 				</div>
-				<a id="textLink1" href="https://share.antheminc.com/teams/BrandMktgComms/Lists/SeptDec2019_Job_Requests/NewForm.aspx?">Work&nbsp;with&nbsp;us <img src="images/arrow-rightMini.svg" alt="arrow icon"/> </a>
-				<a id="textLink2" href="#ourServ">Our&nbsp;services <img src="images/arrow-rightMini.svg" alt="arrow icon"/></a>
+				<a class="textLink" href="https://share.antheminc.com/teams/BrandMktgComms/Lists/SeptDec2019_Job_Requests/NewForm.aspx?">Work&nbsp;with&nbsp;us <img src="images/arrow-rightMini.svg" alt="arrow icon"/> </a>
+				<a class="textLink" href="#ourServ">What&nbsp;we&nbsp;offer <img src="images/arrow-rightMini.svg" alt="arrow icon"/></a>
 			</div>
 		</div>	  
 		<div class="col-md-6 float-right">
@@ -216,26 +294,25 @@ function handleComplete(evt,comp) {
 					<div class="card-body">	
 						
 						
-						<h2 class="card-title">Our services</h2>
+						<h2 class="card-title">What&nbsp;we&nbsp;offer</h2>
 						<div id="vertlineCopy2">
 							<p class="card-text">  
-							Everyone is going to see things differently - and that’s the way it should be. Here’s something that’s fun. We can fix anything. I’m sort of a softy, I couldn’t shoot Bambi except with a camera. By now you should be quite happy about what’s happening here. If you overwork it you become a cloud killer. There’s nothing worse than a cloud killer. Now we’ll take the almighty fan brush. Now it’s beginning to make a little sense.<br/><br/>
-
-							And that’s when it becomes fun - you don’t have to spend your time thinking about what’s happening - you just let it happen. God gave you this gift of imagination. Use it. 
+							From concept to execution, our team works with you to deliver on-brand, compliant, effective marketing strategies and communication campaigns. <br>
+							We provide analysis, creative development, production, distribution and project management support. Tell us your goal. We’ll help you meet&nbsp;it. 
 							</p>
 						</div>
-						<a id="textLink3" href="#">Our&nbsp;work <img src="images/arrow-rightMini.svg" alt="arrow icon"/> </a>
+						<a class="textLink" href="ourWork.html">Our&nbsp;work <img src="images/arrow-rightMini.svg" alt="arrow icon"/> </a>
 						
 					</div>
 				</div>	  
 				<div class="col-md-6">
 					<!--  WIDGET -->
-						<div  id="animation_container" style="background-color:rgba(237, 247, 252, 1.00); width:800px; height:800px">
+						<div id="animation_container" style="background-color:rgba(237, 247, 252, 1.00); width:800px; height:800px">
 							<canvas class="ourServWidget" id="canvas" width="800" height="800" style="position: absolute; display: block; background-color:rgba(237, 247, 252, 1.00);"></canvas>
 							<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:800px; position: absolute; left: 0px; top: 0px; display: block;">
 							</div>
 						</div>
-				</div>
+					</div>
 			  </div>	 
 			</div>
 
@@ -244,13 +321,13 @@ function handleComplete(evt,comp) {
 	  
 	
 <!-- Footer-->
-	  
+	<div class="footerBG">
 	<footer id="footer" class="jumbotron jumbotron-fluid">
 	  <div class="container">
 		<p>Provided by MAMCOM | Medicaid Marketing and Member&nbsp;Communications</p>
 	  </div>
 	</footer>
-	  
+	</div>  
   	  
 	  
 
@@ -261,5 +338,8 @@ function handleComplete(evt,comp) {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	  
+ <!-- Disable related thumbnail on youtube player -->	  
+<script>"use strict"; document.addEventListener('DOMContentLoaded', function(){if (window.hideYTActivated) return; let onYouTubeIframeAPIReadyCallbacks=[]; for (let playerWrap of document.querySelectorAll(".hytPlayerWrap")){let playerFrame=playerWrap.querySelector("iframe"); let tag=document.createElement('script'); tag.src="https://www.youtube.com/iframe_api"; let firstScriptTag=document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); let onPlayerStateChange=function(event){if (event.data==YT.PlayerState.ENDED){playerWrap.classList.add("ended");}else if (event.data==YT.PlayerState.PAUSED){playerWrap.classList.add("paused");}else if (event.data==YT.PlayerState.PLAYING){playerWrap.classList.remove("ended"); playerWrap.classList.remove("paused");}}; let player; onYouTubeIframeAPIReadyCallbacks.push(function(){player=new YT.Player(playerFrame,{events:{'onStateChange': onPlayerStateChange}});}); playerWrap.addEventListener("click", function(){let playerState=player.getPlayerState(); if (playerState==YT.PlayerState.ENDED){player.seekTo(0);}else if (playerState==YT.PlayerState.PAUSED){player.playVideo();}});}window.onYouTubeIframeAPIReady=function(){for (let callback of onYouTubeIframeAPIReadyCallbacks){callback();}}; window.hideYTActivated=true;});</script>	  
   </body>
 </html>

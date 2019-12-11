@@ -2,12 +2,24 @@
 //Navbar menu hide on click anywhere
 
 $('body').on('click', function(){
-	 "use strict";
     $('.navbar-collapse').collapse('hide');
 });
 
+//Our Partners tooltip function
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+$("#carouselExampleIndicatorsModal").carousel({interval: false});
 
 
+//arrow scroll effect
+$(document).ready(function(){
+        $(window).scroll(function(){
+            $(".a").css("opacity", 1 - $(window).scrollTop() / ($('.a').height() / 2));
+        });
+    });
 
 
 /* -----------Code on hold!------------------
@@ -42,6 +54,15 @@ $(document).ready(function () {
 
 // animate logo text on nav collapse 
 $("#logoText").animate({width: "toggle”});’
+
+//Collapse animation team profile
+$('.btnProfileCard').on('click', function(e) {
+  var $panel = $(this).closest('.panel');
+  $('html,body').animate({
+    scrollTop: $panel.offset().top
+  }, 500);
+});
+
 
 */
 

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+	
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+	<meta name="authoring-tool" content="Adobe_Animate_CC">
+<!-- Anitmate JS MAP-->
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script>
+function LoadGFonts(families, comp) {				
+	var lib=comp.getLibrary();				
+	var googleObject = {type: "Google", loadedFonts: 0, totalFonts: families.length, callOnLoad: lib.gfontAvailable};				
+	for(var i =0; i < families.length; i++)				
+		isFontAvailable(gFontsFamilies[i], googleObject);				
+}
+function isFontAvailable(font, obj) {				
+	var timeOut = 5000;				
+	var delay = 200;				
+	var interval = 0;				
+	var timeElapsed = 0;				
+	function checkFont() {				
+		var node = document.createElement("span");				
+		node.innerHTML = "giItT1WQy@!-/#";				
+		node.style.position      = "absolute";				
+		node.style.left          = "-1000px";				
+		node.style.top           = "-1000px";				
+		node.style.fontSize      = "300px";				
+		node.style.fontFamily    = "sans-serif";				
+		node.style.fontVariant   = "normal";				
+		node.style.fontStyle     = "normal";				
+		node.style.fontWeight    = "normal";				
+		node.style.letterSpacing = "0";				
+		document.body.appendChild(node);				
+		var width = node.offsetWidth;				
+		node.style.fontFamily = font+","+node.style.fontFamily;				
+		var returnVal = false;				
+		if((node && node.offsetWidth != width) || timeElapsed >=timeOut) {				
+			obj.loadedFonts++;				
+			if(interval)				
+				clearInterval(interval);				
+			obj.callOnLoad(font, obj.totalFonts);				
+			returnVal = true;				
+		}				
+		if(node) {				
+			node.parentNode.removeChild(node);				
+			node = null;				
+		}				
+		timeElapsed += delay;				
+		return returnVal;				
+	}				
+	if(!checkFont()) {				
+		interval = setInterval(checkFont, delay);				
+	}				
+}
+</script>
+<script>
+	var gFontsFamilies = ["Roboto"];
+</script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300&subset=latin">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:500&subset=latin">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:700&subset=latin">
+<script src="MAMCOM_Website_Map.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script>
+function LoadGFonts(families, comp) {				
+	var lib=comp.getLibrary();				
+	var googleObject = {type: "Google", loadedFonts: 0, totalFonts: families.length, callOnLoad: lib.gfontAvailable};				
+	for(var i =0; i < families.length; i++)				
+		isFontAvailable(gFontsFamilies[i], googleObject);				
+}
+function isFontAvailable(font, obj) {				
+	var timeOut = 5000;				
+	var delay = 200;				
+	var interval = 0;				
+	var timeElapsed = 0;				
+	function checkFont() {				
+		var node = document.createElement("span");				
+		node.innerHTML = "giItT1WQy@!-/#";				
+		node.style.position      = "absolute";				
+		node.style.left          = "-1000px";				
+		node.style.top           = "-1000px";				
+		node.style.fontSize      = "300px";				
+		node.style.fontFamily    = "sans-serif";				
+		node.style.fontVariant   = "normal";				
+		node.style.fontStyle     = "normal";				
+		node.style.fontWeight    = "normal";				
+		node.style.letterSpacing = "0";				
+		document.body.appendChild(node);				
+		var width = node.offsetWidth;				
+		node.style.fontFamily = font+","+node.style.fontFamily;				
+		var returnVal = false;				
+		if((node && node.offsetWidth != width) || timeElapsed >=timeOut) {				
+			obj.loadedFonts++;				
+			if(interval)				
+				clearInterval(interval);				
+			obj.callOnLoad(font, obj.totalFonts);				
+			returnVal = true;				
+		}				
+		if(node) {				
+			node.parentNode.removeChild(node);				
+			node = null;				
+		}				
+		timeElapsed += delay;				
+		return returnVal;				
+	}				
+	if(!checkFont()) {				
+		interval = setInterval(checkFont, delay);				
+	}				
+}
+</script>
+<script>
+	var gFontsFamilies = ["Roboto"];
+</script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300&subset=latin">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:500&subset=latin">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:700&subset=latin">
+<script src="MAMCOM_Website_Map.js?1571927400768"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("D5A256C731C9461DABE42DE85E5737C9");
+	var lib=comp.getLibrary();
+	try {
+		if(!(typeof gFontsFamilies === 'undefined' || gFontsFamilies === null))
+			LoadGFonts(gFontsFamilies, comp);		
+		if(!(typeof totalTypekitFonts === 'undefined' || totalTypekitFonts === null)) {			
+			var typekitObject = {type: 'Typekit', loadedFonts: 0, totalFonts: totalTypekitFonts, callOnLoad: lib.tfontAvailable};		
+			Typekit.load({
+			async: true,
+			'fontactive': function(family) {
+				isFontAvailable(family, typekitObject);
+				}
+			});
+		}
+	} catch(e) {};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.MAMCOM_Website_Map();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+	  
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>MAMCOM | Medicaid Marketing and Member Communications</title> 
+<!-- MAMCOM SEO -->	
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	  
+	<meta name="author" content="Katherine Stapleton & Stephen Suratos">
+	<meta name="description" content="MAMCOM | Medicaid Marketing and Member Communications">			
+	<meta name="keywords" content="Anthem, Medicaid, Marketing, Protfolio">  
+	  
+	
+	  
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="stylesheet.css" rel="stylesheet">  
+	  
+	  
+	  <!--	  Contact -->
+	  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+	  
+  </head>
+  
+<!-- onload event for wheel function -->	
+  <body onload="init();" style="margin:0px;">
+
+	  
+<!-- Nav Bar -->  
+	
+	<nav id="myNav" class="navbar sticky-top navbar-expand-lg py-0 navbar-light bg-light py-md-0 my-0 my-sm-0">
+		
+	    <a class="navbar-brand py-0" href="Index.html"><img id="logo" src="images/MAMCOM-Logo.svg"  alt="logo"></a>
+		<a class="navbar-brand py-0" href="Index.html"><img id="logoText" src="images/MAMCOM-Logo-text.svg"  alt="logo"></a>	
+
+	  <button id="navTog" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		<ul id="navBNav" class="navbar-nav ml-auto mt-2 mt-lg-0">
+		  <li id="menuDropdown" class="nav-item dropdown">
+        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          	OUR WORK
+        	</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				  <a class="dropdown-item" href="memberStories.html">Member Stories</a>
+				  <a class="dropdown-item" href="ourWork.html">Our Work</a>
+				</div>
+      	  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="whoWeAre.html">WHO WE&nbsp;ARE</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="partners.html">OUR&nbsp;PARTNERS</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="contact.html">CONTACT</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="resources.html">RESOURCES</a>
+		  </li>	
+			
+		  <li>
+			  <a href="https://share.antheminc.com/teams/BrandMktgComms/Lists/SeptDec2019_Job_Requests/NewForm.aspx?"><button class="btn btn-outline-success my-1 my-sm-0">WORK WITH US</button></a>
+		  </li>		
+
+		</ul>
+		
+		
+	  </div>
+	</nav>
+
+	  
+<!--CONTACT -->   
+	 
+	<div  class="jumbotron jumbotron-fluid">
+			<div id="ourPartners">
+			  <div class="row">
+				<div class="col-md-5">
+					<h1 class="heading">Get in touch
+					</h1>
+					
+					<div class="card-body" style="padding-bottom: 0px">	
+						<div id="vertlineWhoWare">
+							<p class="card-text">  
+							Have an idea? Ready to move forward? We’re ready when you&nbsp;are. <br>
+							Please complete the form 
+							</p>
+						</div>
+						
+						<div class="email-phone container-fluid">
+							
+								<div class="row" style="padding-top: 50px;">
+									<img class="contactIcon align-self-center mr-3" src="images/Green_Envelope.svg" alt="envelope icon">
+									<div class="media-body">
+										<a class="contactMarket" href="mailto:mamcom-marketing-coordinator@anthem.com">mamcom-marketing-coordinator@anthem.com</a>
+									</div>
+								</div>
+							
+								<div class="row" style="padding-top: 25px;">
+									<img class="contactIcon align-self-center mr-3" src="images/Green_Phone.svg" alt="phone icon">
+									<div class="media-body">
+										<a class="contactMarket" href="#marketContact">Find your market contact <img src="images/arrow-rightMini.svg" alt="arrow icon"/></a>
+									</div>		
+								</div>
+						</div>
+					</div>
+											
+					
+				</div>	  
+					<div class="col-md-7">
+						<div class="elfsight-app-104235ae-ecd0-405b-a351-0777ce22f329"></div>
+					</div>
+				  </div>
+				<div class="arrow bounce contactArrow">
+  					<a href="#contactMarket"><img class="a" src="images/arrow-down.svg" alt="arrow icon"/></a>
+				</div>
+		</div>
+
+	</div>
+	  
+
+		
+	<!--Market Contact -->     
+	  
+	  <a id="marketContact"></a>
+
+		<div id="marketContactBG" class="jumbotron jumbotron-fluid">
+
+				<div id="mktContactCnt" class="card">
+				  <div class="row no-gutters">
+					<div class="col-md-3">  
+						<div class="card-body">	
+							<h3 class="card-title" style="text-align: left;">Find your market&nbsp;contact</h3>
+							
+							<img class="mapLedgend align-self-center mr-3" src="images/mapLedgend.svg" alt="map ledgend">
+							
+						</div>
+					</div>	  
+					  
+					<div class="mapSpace col-md-8">
+								<div class="mapWidget" id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:850px; height:532px">
+								<canvas id="canvas" width="850" height="532" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+								<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:850px; height:532px; position: absolute; left: 0px; top: 0px; display: block;">
+								</div>
+							</div>
+					</div>
+				  </div>	 
+				</div>
+
+
+		</div>
+	  
+	  
+	  
+	
+	  
+
+
+<!-- Footer-->
+
+	<footer id="footer" class="jumbotron jumbotron-fluid">
+	  <div class="container">
+		<p>Provided by MAMCOM | Medicaid Marketing and Member&nbsp;Communications</p>
+	  </div>
+	</footer>
+  
+  	  
+	  
+
+<!-- Optional JavaScript -->
+	<script type="text/javascript" src="scripts.js"></script> 
+	  
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
